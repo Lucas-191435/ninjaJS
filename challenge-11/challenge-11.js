@@ -23,12 +23,6 @@
   */
   // ?
 
-  let person = {
-    name: "Lucas",
-    age: 20,
-    weight: 75,
-    birthday: "05-06-2001",
-  }
 
   /*
   Use um loop para percorrer o objeto criado acima, mostrando no console
@@ -41,8 +35,16 @@
   */
   // ?
 
+  let person = {
+    name: "Lucas",
+    age: 20,
+    weight: 75,
+    birthday: "05-06-2001",
+  }
+
+
   for( let pro in person){
-    console.log(`The ${pro} of person is ${pro}`)
+    console.log(`The ${pro} of person is ${person[pro]}` );
   }
 
   
@@ -56,12 +58,34 @@
   */
   // ?
 
+
+  function moreThan(idade){
+    if(person.age > idade){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  let idade = 16;
+  console.log(`The person has more than ${idade} years old? ${moreThan(idade)}`);
+
+
+
   /*
   Faça um loop de 0 a 20, que adicione cada número como um item de um
   array chamado `numbers`. Se o contador for maior que 10, saia do loop.
   Mostre no console os números no array.
   */
-  console.log( 'De 0 a 10:' );
+  let numbers = [];
+  for(let i = 0; i < 20; i++){
+    if(i > 10 ){
+      break;
+    }
+    
+    numbers.push(i);
+  }
+  console.log(numbers);
   // ?
 
   /*
@@ -70,6 +94,15 @@
   esses. Se o número for ímpar, pular para o próximo número.
   Mostrar no console os números do array.
   */
+  numbers = [];
+  for(let i=0; i <= 20; i++){
+    if(!(i % 2)){
+      numbers.push(i);
+    }
+  }
+
+
+  console.log(numbers);
   console.log( 'Pares de 0 a 20:' );
   // ?
 
