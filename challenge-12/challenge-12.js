@@ -1,4 +1,5 @@
-/*
+(()=>{
+    /*
 Envolva todo o conteúdo desse arquivo em uma IIFE.
 */
 
@@ -11,7 +12,21 @@ Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
 de valor para cada propriedade.
 */
 // ?
-console.log( 'Propriedades de "person":' );
+
+
+const person = {
+    name: 'Lucas',
+    lastname: 'Santos',
+    age: 20 
+}
+
+
+const mArray = ()=>{
+    for(let pro in person){
+        console.log(pro);
+    }
+}
+
 
 /*
 Mostre no console, em um array, todas as propriedades do objeto acima.
@@ -20,9 +35,24 @@ Não use nenhuma estrutura de repetição, nem crie o array manualmente.
 // ?
 
 /*
+
+
 Crie um array vazio chamado `books`.
 */
 // ?
+const books = [];
+function book(name, pages){
+    this.name = name;
+    this.pages = pages;
+}
+
+const nbook1 = new book('MazeRunner', 385);
+const nbook2 = new book('CursoJS', 405);
+const nbook3 = new book('Todo dia', 289);
+
+books.push(nbook1, nbook2, nbook3);
+
+
 
 /*
 Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
@@ -41,8 +71,17 @@ Mostre no console todos os livros.
 console.log( '\nLivro que está sendo removido:' );
 /*
 Remova o último livro, e mostre-o no console.
+
+
 */
 // ?
+
+;
+console.log(books);
+
+console.log(books.pop())
+
+console.log(books)
 
 console.log( '\nAgora sobraram somente os livros:' );
 /*
@@ -56,6 +95,7 @@ Converta os objetos que ficaram em `books` para strings.
 // ?
 console.log( '\nLivros em formato string:' );
 
+console.log(...books[1])
 /*
 Mostre os livros nesse formato no console:
 */
@@ -98,3 +138,5 @@ console.log( '\nAgora em ordem alfabética:' );
 Mostre todos os itens do array acima, odenados alfabéticamente.
 */
 // ?
+
+})();
