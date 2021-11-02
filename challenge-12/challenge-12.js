@@ -95,7 +95,7 @@ Converta os objetos que ficaram em `books` para strings.
 // ?
 console.log( '\nLivros em formato string:' );
 
-console.log(...books[1])
+console.log(books.pro)
 /*
 Mostre os livros nesse formato no console:
 */
