@@ -1,3 +1,24 @@
+/*
+-----Lista de recursos usados para solucionar os exercicios
+
+1 - join para concatenar o array e exibir melhor
+2 - Usar o for no lugar do foreach, para ter mais controle sobre o tamanha/lenght do array, quando se retirar um item dele.
+Quando eu retiro, o ultimo index começa a referenciar outro elemento.
+3 - indexOf() para buscar o index de um conteudo no array
+4 - unshift para adicionar no inicio do array e push no final
+5 - shift para remover no inicio do array e pop no final
+6 - concat para concatenar array Ex: array.concat(...outroArray);
+
+
+7 - O mais chato de todos Splice, que serve para procurar um elemento pelo seu index, e retirar um numero de elementos, e também adicionar elementos no lugar especificado 
+Ex: array.splice(indexElemento, nElRetirar, 'novoEl');
+
+8 - Utilização de funções para retornar um valor
+9 - Utilização do for com o break dentro de um if;
+
+*/
+
+
 (()=>{
   /*
 Envolva todo o código desse desafio em uma IIFE.
