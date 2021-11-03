@@ -161,7 +161,24 @@ atribuindo o resultado à uma variável. Se tiver, mostre no console a frase:
 Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
 */
-console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
+
+
+
+function verificaTamanhoDeLetras(nLetras){
+  let resposta;
+  for(let i = 0; brasil.length > i; i++){
+    if(brasil[i].length > nLetras){
+      console.log(brasil[i])
+      resposta = "Sim, todos os estados tem mais de 7 letras!";
+    }else{
+      resposta = "Nem todos os estados tem mais de 7 letras!";
+      break;
+    }
+  }
+  return resposta;
+}
+
+console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' + verificaTamanhoDeLetras(7));
 // ?
 
 /*
@@ -172,7 +189,20 @@ console:
 Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
-console.log( '\nCeará está incluído em `brasil`?' );
+
+function verificaEstado(estado){
+  let resposta = '';
+  for(let i =0; brasil.length > i; i++){
+    if(brasil[i].toLocaleUpperCase === estado.toLocaleUpperCase){
+      resposta = "Ceará está incluído!";
+      break;
+    }else{
+      resposta = "Ceará não foi incluído :(";
+    }
+  }
+  return resposta;
+}
+console.log( '\nCeará está incluído em `brasil`?' + verificaEstado('Ceará'));
 // ?
 
 /*
@@ -183,10 +213,23 @@ Atribua o novo array a uma variável chamada `map`.
 */
 // ?
 
+let map = [];
+
+map = newBrasil.map((est)=>{
+    const sEstado = est;
+    let copia = JSON.parse(JSON.stringify(est)); // Copia o Objeto do newBrasil e passa para variavel
+    copia.estado = copia.estado + " pertence ao Brasil."
+    copia.id = copia.id + 1;
+    return copia;
+})
+
+//console.log(map);
+console.log(newBrasil)
+
 /*
 Mostre no console o array criado acima:
 */
-console.log( '\nnewBrasil agora com mais informações:' );
+console.log( '\nnewBrasil agora com mais informações:' + map );
 // ?
 
 /*
@@ -195,9 +238,22 @@ ID par. Atribua o valor à uma variável chamada `filter`.
 */
 // ?
 
+const filter = [];
+
+
+map.forEach((estObj)=>{
+  let copia = JSON.parse(JSON.stringify(estObj));
+  if((copia.id % 2) === 0 ){
+    filter.push(copia);
+  }
+})
+
+
+
+
 /*
 Mostre o array filtrado acima no console.
 */
-console.log( '\nEstados com ID par:' );
+console.log( filter );
 // ?
 })();
