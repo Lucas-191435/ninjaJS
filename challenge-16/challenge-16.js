@@ -1,4 +1,5 @@
-/*
+(()=>{
+  /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
@@ -13,7 +14,14 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 - "e é a 2ª letra do meu nome."
 E assim por diante, até a última.
 */
+
+const name = 'Fernando';
+
 console.log( 'As letras do seu nome:' );
+
+Array.from(name).forEach((letra,index) =>{
+  console.log(`${letra} é a ${index+1}ª letra do meu nome.`)
+})
 // ?
 
 /*
@@ -68,3 +76,4 @@ Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
 // ?
+})();
