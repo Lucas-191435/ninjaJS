@@ -36,7 +36,21 @@ curso para fazer isso funcionar corretamente :)
 - Mostre no console o nome no formato slug, e o resultado final. Use um
 console.log para cada formato.
 */
-console.log( '\nNome convertido à partir de um slug:' );
+
+let fullName = 'lucas-fernando';
+
+function modificaNome(fullname){
+  
+  fullname = fullname.split('-'); 
+  for(let i =0; fullname.length > i; i++){
+    let sb = fullname[i].charAt(0).toUpperCase() + fullname[i].substring(1);
+    fullname[i] = sb;
+  }
+  return fullname.join(' ')
+}
+modificaNome(fullName)
+
+console.log( '\nNome convertido à partir de um slug: ' +modificaNome(fullName) );
 // ?
 
 /*
@@ -48,7 +62,21 @@ O resultado final deve ficar mais ou menos assim:
 - Detalhe: o código abaixo deve funcionar com um array de qualquer tamanho.
 5 nomes foi somente uma sugestão ;)
 */
-console.log( '\nMeus amigos:' );
+
+let arNomes = ['Lucas','Fernando','Gabriel','João','Luan']
+let meusAmigos = '';
+arNomes.forEach((nome,index)=>{
+  if(arNomes.length - 2 === index){
+    meusAmigos+= ', ' + nome + " e ";
+  }else if((arNomes.length - 1) === index){
+    meusAmigos += nome;
+  }else if((index) === 0){
+    meusAmigos += nome;
+  }else{
+    meusAmigos+= ', ' + nome;
+  }
+})
+console.log( '\nMeus amigos: ' + meusAmigos );
 // ?
 
 /*
