@@ -1,10 +1,24 @@
 (()=>{
+/*
+Exercicios da lista:
+1 - Mostrar cada uma das letras do nome, com uma frase - usei um foreach para resolver
+2 - Foi alterar a primeira letra de cada palavra, de uma string onde as palavras estão divididas por '-'
+Para resolver esse, precisei separar as palavras usando split, pegar cada uma usando um for, e atribuir ao item da array ele mesmo depois de alterar sua primeira letra.
+3 - Alterar a ultima letra de um nome, separei o nome em um array, peguei a ultima letra e alterei para qual eu queria.
+
+4 - Esse eu tinha que retirar um parte de uma string, consegui retirar, usando o SLICE e SUBSTRING, mas em nenhuma consegui
+encontrar um modo de achar o ultimo index string.slice(indexInicio, indexFinal); não achei o indexFinal.
+*/ 
+
+
+
+
+
   /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
-
 /*
 Declare uma variável chamada `name` que receba seu primeiro nome.
 Mostre no console todas as letras do seu nome separadas, com a frase:
@@ -43,8 +57,7 @@ function modificaNome(fullname){
   
   fullname = fullname.split('-'); 
   for(let i =0; fullname.length > i; i++){
-    let sb = fullname[i].charAt(0).toUpperCase() + fullname[i].substring(1);
-    fullname[i] = sb;
+    fullname[i]= fullname[i].charAt(0).toUpperCase() + fullname[i].substring(1);
   }
   return fullname.join(' ')
 }
@@ -85,10 +98,11 @@ Mostre o resultado no console.
 */
 
 const n = 'Roberto';
-const ulLetra = n.charAt(n.length-1);
+let arr = n.split('');
+arr[arr.length-1] = 'a';
+arr = arr.join('');
 
-n.replace(ulLetra, 'a')
-console.log( '\nEra "Roberto", agora é: ' + n);
+console.log( '\nEra "Roberto", agora é: ' + arr);
 // ?
 
 /*
