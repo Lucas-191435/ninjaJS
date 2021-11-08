@@ -83,14 +83,30 @@ console.log( '\nMeus amigos: ' + meusAmigos );
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
-console.log( '\nEra "Roberto", agora é:' );
+
+const n = 'Roberto';
+const ulLetra = n.charAt(n.length-1);
+
+n.replace(ulLetra, 'a')
+console.log( '\nEra "Roberto", agora é: ' + n);
 // ?
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
-console.log( '\nParte de uma string:' );
+//Exercicio incompleto!
+const nando = 'fernando'
+
+function buscaParteString(sCompleta, sParte){
+  if(sCompleta.includes(sParte)){
+   let a = sCompleta.slice(sCompleta.indexOf(sParte), sCompleta.length);
+   console.log(a);
+  }
+}
+console.log( '\nParte de uma string:' + nando.includes('nando'));
+
+buscaParteString(nando, 'nando');
 // ?
 
 /*
@@ -102,6 +118,23 @@ e minúsculas.
 de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
-console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
+
+
+function intercalaLetrasDoNome(nome){
+  nome = nome.toLowerCase();
+  let aNome = nome.split("");
+  let nomeIntercalado = "";
+  aNome.forEach((letra, index)=>{
+    if((index%2) == 0){
+      nomeIntercalado += letra.toUpperCase();
+    }else{
+      nomeIntercalado += letra;
+    }
+  })
+
+  return nomeIntercalado;
+}
+
+console.log( '\nNome com letras intercaladas entre caixa alta e baixa: ' + intercalaLetrasDoNome('Sabreiar') );
 // ?
 })();
