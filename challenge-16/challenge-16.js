@@ -1,4 +1,5 @@
-/*
+(()=>{
+  /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
@@ -13,7 +14,14 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 - "e é a 2ª letra do meu nome."
 E assim por diante, até a última.
 */
+
+const name = 'Fernando';
+
 console.log( 'As letras do seu nome:' );
+
+Array.from(name).forEach((letra,index) =>{
+  console.log(`${letra} é a ${index+1}ª letra do meu nome.`)
+})
 // ?
 
 /*
@@ -28,7 +36,21 @@ curso para fazer isso funcionar corretamente :)
 - Mostre no console o nome no formato slug, e o resultado final. Use um
 console.log para cada formato.
 */
-console.log( '\nNome convertido à partir de um slug:' );
+
+let fullName = 'lucas-fernando';
+
+function modificaNome(fullname){
+  
+  fullname = fullname.split('-'); 
+  for(let i =0; fullname.length > i; i++){
+    let sb = fullname[i].charAt(0).toUpperCase() + fullname[i].substring(1);
+    fullname[i] = sb;
+  }
+  return fullname.join(' ')
+}
+modificaNome(fullName)
+
+console.log( '\nNome convertido à partir de um slug: ' +modificaNome(fullName) );
 // ?
 
 /*
@@ -40,21 +62,51 @@ O resultado final deve ficar mais ou menos assim:
 - Detalhe: o código abaixo deve funcionar com um array de qualquer tamanho.
 5 nomes foi somente uma sugestão ;)
 */
-console.log( '\nMeus amigos:' );
+
+let arNomes = ['Lucas','Fernando','Gabriel','João','Luan']
+let meusAmigos = '';
+arNomes.forEach((nome,index)=>{
+  if(arNomes.length - 2 === index){
+    meusAmigos+= ', ' + nome + " e ";
+  }else if((arNomes.length - 1) === index){
+    meusAmigos += nome;
+  }else if((index) === 0){
+    meusAmigos += nome;
+  }else{
+    meusAmigos+= ', ' + nome;
+  }
+})
+console.log( '\nMeus amigos: ' + meusAmigos );
 // ?
 
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
-console.log( '\nEra "Roberto", agora é:' );
+
+const n = 'Roberto';
+const ulLetra = n.charAt(n.length-1);
+
+n.replace(ulLetra, 'a')
+console.log( '\nEra "Roberto", agora é: ' + n);
 // ?
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
-console.log( '\nParte de uma string:' );
+//Exercicio incompleto!
+const nando = 'fernando'
+
+function buscaParteString(sCompleta, sParte){
+  if(sCompleta.includes(sParte)){
+   let a = sCompleta.slice(sCompleta.indexOf(sParte), sCompleta.length);
+   console.log(a);
+  }
+}
+console.log( '\nParte de uma string:' + nando.includes('nando'));
+
+buscaParteString(nando, 'nando');
 // ?
 
 /*
@@ -66,5 +118,23 @@ e minúsculas.
 de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
-console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
+
+
+function intercalaLetrasDoNome(nome){
+  nome = nome.toLowerCase();
+  let aNome = nome.split("");
+  let nomeIntercalado = "";
+  aNome.forEach((letra, index)=>{
+    if((index%2) == 0){
+      nomeIntercalado += letra.toUpperCase();
+    }else{
+      nomeIntercalado += letra;
+    }
+  })
+
+  return nomeIntercalado;
+}
+
+console.log( '\nNome com letras intercaladas entre caixa alta e baixa: ' + intercalaLetrasDoNome('Sabreiar') );
 // ?
+})();
